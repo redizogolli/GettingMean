@@ -1,3 +1,6 @@
+// mongoose
+require('./app-server/models/db');
+
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -15,8 +18,7 @@ const app = express();
 app.set('views', path.join(__dirname,'app-server','views'));
 app.set('view engine', 'pug');
 
-// mongoose
-require('./app-server/models/db');
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
