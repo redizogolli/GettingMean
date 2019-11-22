@@ -1,5 +1,5 @@
 // mongoose
-require('./app-server/models/db');
+require('./app-api/models/db');
 
 const express = require('express');
 const path = require('path');
@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 // routes
 const indexRouter = require('./app-server/routes/index');
 const usersRouter = require('./app-server/routes/users');
+const apiRouter = require('./app-api/routes/index');
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use('/home', indexRouter);
 app.use('/details', indexRouter);
 app.use('/reviews', indexRouter);
 app.use('/about', indexRouter);
+app.use('/api',apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
