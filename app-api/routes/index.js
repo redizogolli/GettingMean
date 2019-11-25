@@ -12,21 +12,22 @@ router
 
 router
 .route('/locations/:locationid')
-.get(ctrlLocations.locationsReadOne);
-// .put(ctrlLocations.locationsUpdateOne)
-// .delete(ctrlLocations.locationsDeleteOne);
+.get(ctrlLocations.locationsReadOne)
+.put(ctrlLocations.locationsUpdateOne)
+.delete(ctrlLocations.locationsDeleteOne);
 
 
 // reviews
-// router
-// .route('/locations/:locationid/reviews')
-// .post(ctrlReviews.reviewsCreate);
+router
+.route('/locations/:locationid/reviews')
+.get(ctrlReviews.reviewsList)
+.post(ctrlReviews.reviewsCreate);
 
 
-// router
-// .route('/locations/:locationid/reviews/:reviewid')
-// .get(ctrlReviews.reviewsReadOne)
-// .put(ctrlReviews.reviewsUpdateOne)
-// .delete(ctrlReviews.reviewsDeleteOne);
+router
+.route('/locations/:locationid/reviews/:reviewid')
+.get(ctrlReviews.reviewsReadOne)
+.put(ctrlReviews.reviewsUpdateOne)
+.delete(ctrlReviews.reviewsDeleteOne);
 
 module.exports = router;
